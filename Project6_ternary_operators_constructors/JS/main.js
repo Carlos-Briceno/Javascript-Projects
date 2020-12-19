@@ -1,6 +1,6 @@
 function ride_function() { // defines the function // 
     var height, Can_ride; // variable //
-    height = document.getElementById("height").nodeValue; // this is the id for height in html // 
+    height = document.getElementById("height").value; // this is the id for height in html // 
     Can_ride = (height < 52) ? "You are too short":"You are tall enough"; // will be displayed in html //
     document.getElementById("ride").innerHTML = Can_ride + " to ride."; // this is the id for ride in html // 
 }
