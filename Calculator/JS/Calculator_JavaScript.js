@@ -8,7 +8,7 @@ const Calculator = {
 
 // modifies values each time a button is clicked 
 function Input_Digit(digit) {
-    const { Display_Value, Wait_Second_Operand } = calculator;
+    const { Display_Value, Wait_Second_Operand } = Calculator;
     if (Wait_Second_Operand === true) {
         Calculator.Display_Value = digit;
         Calculator.Wait_Second_Operand = false;
@@ -29,7 +29,7 @@ function Input_Decimal(dot) {
 function Handle_Operator(Next_Operator) {
     const { First_Operand, Display_Value, operator } = Calculator
     const Value_of_Input = parseFloat(Display_Value);
-    if (operator && calculator.Wait_Second_Operand) {
+    if (operator && Calculator.Wait_Second_Operand) {
         Calculator.operator = Next_Operator;
         return;
     }
@@ -38,7 +38,8 @@ function Handle_Operator(Next_Operator) {
     } else if (operator) {
         const Value_Now = First_Operand || 0;
         let result = Perform_Calculation[operator](Value_Now, Value_of_Input);
-        result = Number(result).toString()
+        result = Number(result).toFixed(9)
+        result = (result * 1).toString()
         Calculator.Display_Value = parseFloat(result);
         Calculator.First_Operand = parseFloat(result);
     }
@@ -70,7 +71,7 @@ function Update_Display() {
 Update_Display();
 // this section mointers button clicks 
 const keys = document.querySelector('.calculator-keys');
-keys.addEventListener('Click', (event) => {
+keys.addEventListener('click', (event) => {
     const { target } = event;
     if (!target.matches('button')) {
         return;
