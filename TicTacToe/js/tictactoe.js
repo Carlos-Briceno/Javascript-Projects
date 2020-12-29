@@ -68,9 +68,10 @@ function disableClick() { // defines the function
     body.style.pointerEvents = 'none';
     setTimeout(function() {body.style.pointerEvents = 'auto';}, 1000);
 }
-function audio(audioURL); // audio function 
+function audio(audioURL) { // audio function 
 let audio = new Audio(audioURL);
 audio.play();
+}
 // this section draws the win line on the canvas 
 function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     const canvas = document.getElementById('win-lines');
@@ -109,7 +110,7 @@ setTimeout(function () { clear(); resetGame(); }, 1000); // resets the game
 // resets the game 
 function resetGame() {
     for (let i = 0; i < 9; i++) {
-        let square = document.getElementById(string(i));
+        let square = document.getElementById(String(i));
         square.style.backgroundImage = '';
     }
     selectedSquares = [];
