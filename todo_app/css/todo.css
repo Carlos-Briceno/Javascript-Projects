@@ -1,0 +1,39 @@
+html {
+    font-family: "Avenir Next", Helvetica, sans-serif;
+    text-align: center;
+}
+
+body {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input {
+    padding-top: 30px;
+    width: 500px;
+    height: 60px;
+    font-size: 40px;
+    border: 0;
+}
+    input:focus {
+        outline: none;
+}
+
+li {
+    text-align: left;
+    font-size: 40px;
+    list-style: none;
+    margin: 0;
+}
+
+h4 {
+    text-align: left;
+    vertical-align: bottom;
+    bottom: 0;
+    position: absolute;
+    border: 1px solid #256732;
+}
+
+.remove {
+    padding-bottom: 5px;
+}
